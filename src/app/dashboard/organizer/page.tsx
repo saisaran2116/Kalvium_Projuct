@@ -47,7 +47,7 @@ export default function OrganizerDashboardPage() {
         <div className="p-8 rounded-2xl bg-white  border-2 border-black  shadow-kalvium-md">
           <p className="text-base font-bold text-black  mb-2">Organizer Access Required</p>
           <p className="text-xs text-gray-500  mb-6">
-            Please log in as an Organizer or switch to "Robotics Club (Organizer)" using the top demo bar.
+            Please sign in with an organizer account to access the Organizer Studio.
           </p>
           <Link
             href="/login"
@@ -113,27 +113,24 @@ export default function OrganizerDashboardPage() {
       <div className="flex items-center gap-2 border-b border-gray-300  pb-4 mb-8 overflow-x-auto">
         <button
           onClick={() => setActiveTab("SUBMISSIONS")}
-          className={`px-5 py-2.5 rounded-full text-[10px] uppercase tracking-widest font-black border-2 transition-all duration-200 active:scale-95 flex items-center gap-2 shrink-0 ${
-            activeTab === "SUBMISSIONS"
+          className={`px-5 py-2.5 rounded-full text-[10px] uppercase tracking-widest font-black border-2 transition-all duration-200 active:scale-95 flex items-center gap-2 shrink-0 ${activeTab === "SUBMISSIONS"
               ? "bg-[#E5391F] text-white border-black shadow-[4px_4px_0px_0px_black]"
               : "bg-white text-black hover:bg-black hover:text-white border-black "
-          }`}
+            }`}
         >
           <span>Your Submissions</span>
-          <span className={`px-2 py-0.5 rounded-full text-[10px] font-sans font-bold ${
-            activeTab === "SUBMISSIONS" ? "bg-white/20 text-white" : "bg-gray-100 text-gray-500"
-          }`}>
+          <span className={`px-2 py-0.5 rounded-full text-[10px] font-sans font-bold ${activeTab === "SUBMISSIONS" ? "bg-white/20 text-white" : "bg-gray-100 text-gray-500"
+            }`}>
             {events.length}
           </span>
         </button>
 
         <button
           onClick={() => setActiveTab("CREATE_AI")}
-          className={`px-5 py-2.5 rounded-full text-[10px] uppercase tracking-widest font-black border-2 transition-all duration-200 active:scale-95 flex items-center gap-2 shrink-0 ${
-            activeTab === "CREATE_AI"
+          className={`px-5 py-2.5 rounded-full text-[10px] uppercase tracking-widest font-black border-2 transition-all duration-200 active:scale-95 flex items-center gap-2 shrink-0 ${activeTab === "CREATE_AI"
               ? "bg-[#E5391F] text-white border-black shadow-[4px_4px_0px_0px_black]"
               : "bg-white text-black hover:bg-black hover:text-white border-black "
-          }`}
+            }`}
         >
           <Sparkles className="w-3.5 h-3.5 text-amber-400" />
           <span>Create with AI Poster</span>
@@ -141,11 +138,10 @@ export default function OrganizerDashboardPage() {
 
         <button
           onClick={() => setActiveTab("CREATE_MANUAL")}
-          className={`px-5 py-2.5 rounded-full text-[10px] uppercase tracking-widest font-black border-2 transition-all duration-200 active:scale-95 flex items-center gap-2 shrink-0 ${
-            activeTab === "CREATE_MANUAL"
+          className={`px-5 py-2.5 rounded-full text-[10px] uppercase tracking-widest font-black border-2 transition-all duration-200 active:scale-95 flex items-center gap-2 shrink-0 ${activeTab === "CREATE_MANUAL"
               ? "bg-[#E5391F] text-white border-black shadow-[4px_4px_0px_0px_black]"
               : "bg-white text-black hover:bg-black hover:text-white border-black "
-          }`}
+            }`}
         >
           <PenTool className="w-3.5 h-3.5 text-[#E5391F]" />
           <span>Manual Event Entry</span>

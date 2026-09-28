@@ -3,9 +3,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Sparkles, ArrowRight, ShieldCheck, GraduationCap, User, Lock, Mail } from "lucide-react";
+import { Sparkles, Lock, Mail, GraduationCap, User, ShieldCheck } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
-import CampusVerifiedBadge from "@/components/CampusVerifiedBadge";
 
 export default function LoginPage() {
   const { login, demoLogin } = useAuth();
@@ -41,46 +40,50 @@ export default function LoginPage() {
         </p>
       </div>
 
-      {/* Demo Evaluation Presets */}
-      <div className="mb-8 p-6 rounded-2xl bg-gray-50 border-4 border-black space-y-4 shadow-[4px_4px_0px_0px_black]">
-        <span className="text-[10px] font-sans uppercase tracking-widest text-black font-black block mb-2">
-          ⚡ 1-Click Demo Evaluation Sign In
-        </span>
-        <div className="grid grid-cols-1 gap-2">
+      {/* 1-Click Demo Logins */}
+      <div className="mb-8 p-6 rounded-2xl bg-white border-4 border-black space-y-4 shadow-[4px_4px_0px_0px_black]">
+        <div className="flex items-center justify-between">
+          <span className="text-[10px] font-sans uppercase tracking-widest text-black font-black flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#E5391F] animate-pulse border border-black" />
+            <span>⚡ 1-Click Demo Logins</span>
+          </span>
+          <span className="text-[9px] font-bold text-gray-500 uppercase tracking-wider">Instant Access</span>
+        </div>
+        <div className="grid grid-cols-1 gap-2.5">
           <button
             type="button"
             onClick={() => demoLogin("STUDENT")}
-            className="flex items-center justify-between p-4 rounded-xl bg-white border-2 border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_black] text-[10px] font-black uppercase tracking-widest text-black transition-all"
+            className="flex items-center justify-between p-3.5 rounded-xl bg-[#F7F7F5] border-2 border-black hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_black] text-[10px] font-black uppercase tracking-widest text-black transition-all group"
           >
-            <span className="flex items-center gap-2">
-              <GraduationCap className="w-4 h-4 text-black" />
-              <span>Alex Johnson (Student)</span>
+            <span className="flex items-center gap-2.5">
+              <GraduationCap className="w-4 h-4 text-[#E5391F]" />
+              <span>Student Account</span>
             </span>
-            <span className="text-[10px] font-black uppercase tracking-widest text-black">Sign In →</span>
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#E5391F] group-hover:translate-x-0.5 transition-transform">Sign In →</span>
           </button>
 
           <button
             type="button"
             onClick={() => demoLogin("ORGANIZER")}
-            className="flex items-center justify-between p-4 rounded-xl bg-white border-2 border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_black] text-[10px] font-black uppercase tracking-widest text-black transition-all"
+            className="flex items-center justify-between p-3.5 rounded-xl bg-[#F7F7F5] border-2 border-black hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_black] text-[10px] font-black uppercase tracking-widest text-black transition-all group"
           >
-            <span className="flex items-center gap-2">
-              <User className="w-4 h-4 text-black" />
-              <span>Robotics Club (Organizer)</span>
+            <span className="flex items-center gap-2.5">
+              <User className="w-4 h-4 text-[#E5391F]" />
+              <span>Club Organizer</span>
             </span>
-            <span className="text-[10px] font-black uppercase tracking-widest text-black">Sign In →</span>
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#E5391F] group-hover:translate-x-0.5 transition-transform">Sign In →</span>
           </button>
 
           <button
             type="button"
             onClick={() => demoLogin("CAMPUS_MANAGER")}
-            className="flex items-center justify-between p-4 rounded-xl bg-white border-2 border-black hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_black] text-[10px] font-black uppercase tracking-widest text-black transition-all"
+            className="flex items-center justify-between p-3.5 rounded-xl bg-[#F7F7F5] border-2 border-black hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_black] text-[10px] font-black uppercase tracking-widest text-black transition-all group"
           >
-            <span className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-black" />
-              <span>Dr. Sharma (Campus Manager)</span>
+            <span className="flex items-center gap-2.5">
+              <ShieldCheck className="w-4 h-4 text-[#E5391F]" />
+              <span>Campus Manager</span>
             </span>
-            <span className="text-[10px] font-black uppercase tracking-widest text-black">Sign In →</span>
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#E5391F] group-hover:translate-x-0.5 transition-transform">Sign In →</span>
           </button>
         </div>
       </div>
@@ -112,7 +115,7 @@ export default function LoginPage() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="e.g. alex@campus.edu"
+              placeholder="e.g. name@university.edu"
               className="w-full bg-white border-2 border-black shadow-[2px_2px_0px_0px_black] rounded-xl pl-10 pr-4 py-3 text-[10px] font-black uppercase tracking-widest text-black focus:outline-none focus:-translate-y-0.5 focus:shadow-[4px_4px_0px_0px_black] transition-all"
             />
           </div>

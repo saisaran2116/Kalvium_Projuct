@@ -62,8 +62,8 @@ export default function RegisterPage() {
               type="button"
               onClick={() => setRole("STUDENT")}
               className={`p-3 rounded-xl border-2 text-[10px] font-black uppercase tracking-widest transition-all ${role === "STUDENT"
-                  ? "bg-black text-white border-black shadow-none translate-y-0.5"
-                  : "bg-white text-black border-black shadow-[2px_2px_0px_0px_black] hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_black]"
+                ? "bg-black text-white border-black shadow-none translate-y-0.5"
+                : "bg-white text-black border-black shadow-[2px_2px_0px_0px_black] hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_black]"
                 }`}
             >
               🎓 Student
@@ -72,8 +72,8 @@ export default function RegisterPage() {
               type="button"
               onClick={() => setRole("ORGANIZER")}
               className={`p-3 rounded-xl border-2 text-[10px] font-black uppercase tracking-widest transition-all ${role === "ORGANIZER"
-                  ? "bg-black text-white border-black shadow-none translate-y-0.5"
-                  : "bg-white text-black border-black shadow-[2px_2px_0px_0px_black] hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_black]"
+                ? "bg-black text-white border-black shadow-none translate-y-0.5"
+                : "bg-white text-black border-black shadow-[2px_2px_0px_0px_black] hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_0px_black]"
                 }`}
             >
               🏛 Club Organizer
@@ -95,7 +95,7 @@ export default function RegisterPage() {
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder={role === "ORGANIZER" ? "e.g. Robotics & AI Society" : "e.g. Alex Johnson"}
+              placeholder={role === "ORGANIZER" ? "e.g. ACM Student Chapter" : "e.g. Full Name"}
               className="w-full bg-white border-2 border-black shadow-[2px_2px_0px_0px_black] rounded-xl pl-10 pr-4 py-3 text-[10px] font-black uppercase tracking-widest text-black focus:outline-none focus:-translate-y-0.5 focus:shadow-[4px_4px_0px_0px_black] transition-all"
             />
           </div>
@@ -112,7 +112,7 @@ export default function RegisterPage() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="e.g. alex@campus.edu"
+              placeholder="e.g. user@university.edu"
               className="w-full bg-white border-2 border-black shadow-[2px_2px_0px_0px_black] rounded-xl pl-10 pr-4 py-3 text-[10px] font-black uppercase tracking-widest text-black focus:outline-none focus:-translate-y-0.5 focus:shadow-[4px_4px_0px_0px_black] transition-all"
             />
           </div>

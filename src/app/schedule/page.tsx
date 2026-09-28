@@ -68,7 +68,7 @@ export default function MySchedulePage() {
           <Clock className="w-10 h-10 text-kalvium-coral mx-auto mb-3" />
           <h2 className="font-display text-xl font-bold text-kalvium-text dark:text-kalvium-dark-text mb-2">My Schedule</h2>
           <p className="text-xs text-kalvium-muted dark:text-kalvium-dark-muted mb-6">
-            Please sign in or select a demo role in the top evaluation bar to access your personal schedule and clash detector.
+            Please sign in to access your personal schedule and clash detector.
           </p>
           <Link
             href="/login"
@@ -93,7 +93,7 @@ export default function MySchedulePage() {
           <span className="text-xs font-sans uppercase tracking-widest text-[#E5391F] font-black bg-white px-4 py-1.5 rounded-full border-2 border-black shadow-[2px_2px_0px_0px_black]">
             Personal Agenda
           </span>
-          <h1 className="font-display text-5xl sm:text-6xl font-black text-black dark:text-white tracking-tighter uppercase mt-4 leading-none">
+          <h1 className="font-display text-4xl sm:text-5xl font-black text-black dark:text-white tracking-tight uppercase mt-4 leading-tight">
             My schedule.
           </h1>
           <p className="text-sm text-kalvium-muted dark:text-kalvium-dark-muted mt-1">
@@ -245,10 +245,10 @@ function ScheduleItemCard({
     <TiltCard maxTilt={3} className="h-full">
       <div
         className={`p-6 rounded-3xl border-4 transition-all duration-300 relative flex flex-col justify-between h-full group ${event.hasClash
-            ? "border-[#FFB300] bg-white shadow-[8px_8px_0px_0px_#FFB300]"
-            : isHighlight
-              ? "border-black bg-white shadow-[8px_8px_0px_0px_black]"
-              : "border-black bg-white hover:border-[#E5391F] hover:shadow-[8px_8px_0px_0px_#E5391F] shadow-[4px_4px_0px_0px_black]"
+          ? "border-[#FFB300] bg-white shadow-[8px_8px_0px_0px_#FFB300]"
+          : isHighlight
+            ? "border-black bg-white shadow-[8px_8px_0px_0px_black]"
+            : "border-black bg-white hover:border-[#E5391F] hover:shadow-[8px_8px_0px_0px_#E5391F] shadow-[4px_4px_0px_0px_black]"
           }`}
       >
         <div>

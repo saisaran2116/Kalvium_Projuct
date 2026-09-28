@@ -24,7 +24,7 @@ import {
   Mail,
 } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
-import { SAMPLE_POSTERS, ConfidenceLevel } from "@/lib/ai-poster-analyzer";
+import { ConfidenceLevel } from "@/lib/ai-poster-analyzer";
 
 const CATEGORIES = [
   "Workshop",
@@ -122,7 +122,6 @@ export default function CreateEventStudio({
   const [posterPreview, setPosterPreview] = useState<string | null>(null);
   const [posterFile, setPosterFile] = useState<File | null>(null);
   const [customThumbnailUrl, setCustomThumbnailUrl] = useState<string>("");
-  const [selectedSampleId, setSelectedSampleId] = useState<string | null>(null);
   const [selectedPresetId, setSelectedPresetId] = useState<string | null>(null);
 
   // Event Form State
@@ -222,7 +221,6 @@ export default function CreateEventStudio({
     }
 
     setPosterFile(file);
-    setSelectedSampleId(null);
     const reader = new FileReader();
     reader.onload = (e) => {
       const base64 = e.target?.result as string;
@@ -261,17 +259,8 @@ export default function CreateEventStudio({
     }
   };
 
-  // Handle 1-click Sample Poster selection for AI Mode
-  const handleSelectSample = (sample: (typeof SAMPLE_POSTERS)[0]) => {
-    setSelectedSampleId(sample.id);
-    setPosterFile(null);
-    setPosterPreview(sample.previewUrl);
-    startAnalysis({ sampleId: sample.id, posterUrl: sample.previewUrl });
-  };
-
   // Trigger AI Analysis
   const startAnalysis = async (payload: {
-    sampleId?: string;
     imageData?: string;
     mimeType?: string;
     posterUrl?: string;
@@ -986,49 +975,6 @@ export default function CreateEventStudio({
                 <p className="relative z-10 text-xs text-kalvium-muted uppercase tracking-wider font-sans font-semibold">
                   SUPPORTS JPG, JPEG, PNG, WEBP (UP TO 6MB)
                 </p>
-              </div>
-
-              {/* Quick 1-Click Sample Posters Carousel */}
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div>
-                    <h3 className="text-sm font-display font-bold uppercase tracking-wider text-kalvium-text dark:text-kalvium-dark-text">
-                      Or Test with Sample Campus Posters (1-Click AI Demo)
-                    </h3>
-                    <p className="text-xs text-kalvium-muted dark:text-kalvium-dark-muted">
-                      Select any prepared campus poster to see real AI extraction, confidence scores, and clash scenarios.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                  {SAMPLE_POSTERS.map((sample, idx) => (
-                    <div
-                      key={sample.id}
-                      onClick={() => handleSelectSample(sample)}
-                      className={`group relative rounded-2xl overflow-hidden bg-white dark:bg-kalvium-dark-surface border border-kalvium-border dark:border-kalvium-dark-border hover:border-kalvium-coral/50 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-kalvium-md active:scale-95 animate-slide-up stagger-${(idx % 4) + 1}`}
-                    >
-                      <div className="aspect-[4/3] w-full overflow-hidden bg-kalvium-surface-alt dark:bg-kalvium-dark-surface-alt">
-                        <img
-                          src={sample.previewUrl}
-                          alt={sample.name}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 will-change-transform"
-                        />
-                      </div>
-                      <div className="p-3.5">
-                        <span className="text-[10px] font-sans uppercase tracking-wider font-bold text-kalvium-coral block mb-1">
-                          {sample.category}
-                        </span>
-                        <h4 className="text-xs font-bold text-kalvium-text dark:text-kalvium-dark-text group-hover:text-kalvium-coral line-clamp-1 transition-colors">
-                          {sample.name}
-                        </h4>
-                        <span className="text-[11px] text-kalvium-muted group-hover:text-kalvium-coral block mt-1 transition-colors">
-                          Click to analyze with AI →
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
           )}

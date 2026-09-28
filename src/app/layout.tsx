@@ -1,22 +1,13 @@
 import type { Metadata } from "next";
 import React from "react";
-import { Outfit } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 import { ThemeProvider } from "@/context/ThemeContext";
-import DemoSwitcherBar from "@/components/DemoSwitcherBar";
 import Navbar from "@/components/Navbar";
+import DemoSwitcherBar from "@/components/DemoSwitcherBar";
 import SmoothScroll from "@/components/SmoothScroll";
 import ScrollProgress from "@/components/ScrollProgress";
 import KalviumLogo from "@/components/KalviumLogo";
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-  weight: ["400", "500", "700", "900"],
-  display: "swap",
-});
-
 
 export const metadata: Metadata = {
   title: "CampusHub — Verified campus events",
@@ -30,12 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`light ${outfit.variable}`} suppressHydrationWarning>
+    <html lang="en" className="light" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Caacupe+One&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,400;1,700&display=swap"
           rel="stylesheet"
         />
         <script
@@ -47,12 +38,10 @@ export default function RootLayout({
       <body className="font-sans antialiased bg-[#F7F7F5] dark:bg-[#111111] text-[#111111] dark:text-[#FFFFFF] flex flex-col min-h-screen selection:bg-[#E5391F] selection:text-white transition-colors duration-200">
         <AuthProvider>
           <ThemeProvider>
+            <DemoSwitcherBar />
             <ScrollProgress />
             <SmoothScroll>
-              <div className="sticky top-0 z-40 w-full">
-                <DemoSwitcherBar />
-                <Navbar />
-              </div>
+              <Navbar />
               <main className="flex-1">{children}</main>
 
               <footer className="relative border-t-4 border-black bg-white py-16 px-8 sm:px-10">

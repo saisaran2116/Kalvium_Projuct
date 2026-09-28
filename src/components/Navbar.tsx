@@ -32,7 +32,7 @@ export default function Navbar() {
               <div className="group-hover:scale-105 transition-transform duration-200 text-[#E5391F]">
                 <KalviumLogo size={28} className="text-[#E5391F]" />
               </div>
-              <span className="font-display font-black tracking-tighter text-2xl uppercase leading-none text-black dark:text-white">
+              <span className="font-display font-black tracking-normal text-2xl uppercase leading-none text-black dark:text-white">
                 CampusHub
               </span>
             </Link>
@@ -43,36 +43,36 @@ export default function Navbar() {
             {user?.role === "STUDENT" && (
               <Link
                 href="/dashboard/student"
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-black text-xs uppercase tracking-widest transition-all duration-200 border-2 ${isActive("/dashboard/student")
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider whitespace-nowrap transition-all duration-200 border-2 ${isActive("/dashboard/student")
                   ? "bg-[#E5391F] text-white border-[#E5391F] shadow-[4px_4px_0px_0px_black]"
                   : "bg-white text-black border-transparent hover:border-black hover:shadow-[4px_4px_0px_0px_black]"
                   }`}
               >
-                <Sparkles className="w-4 h-4" />
+                <Sparkles className="w-4 h-4 shrink-0" />
                 <span>Student Portal</span>
               </Link>
             )}
 
             <Link
               href="/events"
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-black text-xs uppercase tracking-widest transition-all duration-200 border-2 ${isActive("/events")
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider whitespace-nowrap transition-all duration-200 border-2 ${isActive("/events")
                 ? "bg-[#E5391F] text-white border-[#E5391F] shadow-[4px_4px_0px_0px_black]"
                 : "bg-white text-black border-transparent hover:border-black hover:shadow-[4px_4px_0px_0px_black]"
                 }`}
             >
-              <Compass className="w-4 h-4" />
+              <Compass className="w-4 h-4 shrink-0" />
               <span>Events</span>
             </Link>
 
             {(!user || user.role === "STUDENT") && (
               <Link
                 href="/schedule"
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-black text-xs uppercase tracking-widest transition-all duration-200 border-2 ${isActive("/schedule")
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider whitespace-nowrap transition-all duration-200 border-2 ${isActive("/schedule")
                   ? "bg-[#E5391F] text-white border-[#E5391F] shadow-[4px_4px_0px_0px_black]"
                   : "bg-white text-black border-transparent hover:border-black hover:shadow-[4px_4px_0px_0px_black]"
                   }`}
               >
-                <Clock className="w-4 h-4" />
+                <Clock className="w-4 h-4 shrink-0" />
                 <span>My Schedule</span>
               </Link>
             )}
@@ -80,12 +80,12 @@ export default function Navbar() {
             {user?.role === "ORGANIZER" && (
               <Link
                 href="/dashboard/organizer"
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-black text-xs uppercase tracking-widest transition-all duration-200 border-2 ${isActive("/dashboard/organizer")
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider whitespace-nowrap transition-all duration-200 border-2 ${isActive("/dashboard/organizer")
                   ? "bg-[#E5391F] text-white border-[#E5391F] shadow-[4px_4px_0px_0px_black]"
                   : "bg-white text-black border-transparent hover:border-black hover:shadow-[4px_4px_0px_0px_black]"
                   }`}
               >
-                <Sparkles className="w-4 h-4" />
+                <Sparkles className="w-4 h-4 shrink-0" />
                 <span>Organizer Studio</span>
               </Link>
             )}
@@ -93,12 +93,12 @@ export default function Navbar() {
             {user?.role === "CAMPUS_MANAGER" && (
               <Link
                 href="/dashboard/manager"
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-black text-xs uppercase tracking-widest transition-all duration-200 border-2 ${isActive("/dashboard/manager")
+                className={`flex items-center gap-2 px-4 py-2.5 rounded-full font-bold text-xs uppercase tracking-wider whitespace-nowrap transition-all duration-200 border-2 ${isActive("/dashboard/manager")
                   ? "bg-[#E5391F] text-white border-[#E5391F] shadow-[4px_4px_0px_0px_black]"
                   : "bg-white text-black border-transparent hover:border-black hover:shadow-[4px_4px_0px_0px_black]"
                   }`}
               >
-                <ShieldCheck className="w-4 h-4" />
+                <ShieldCheck className="w-4 h-4 shrink-0" />
                 <span>Verification Studio</span>
               </Link>
             )}
@@ -108,10 +108,10 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
 
             {user ? (
-              <div className="flex items-center gap-4">
-                <div className="text-right">
-                  <p className="text-sm font-black text-black dark:text-white uppercase tracking-tighter">{user.name}</p>
-                  <p className="text-[10px] font-black uppercase tracking-widest text-[#E5391F]">
+              <div className="flex items-center gap-3.5">
+                <div className="text-right min-w-0 flex flex-col justify-center">
+                  <p className="text-sm font-bold text-black dark:text-white uppercase tracking-wide leading-tight whitespace-nowrap">{user.name}</p>
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-[#E5391F] leading-tight mt-0.5 whitespace-nowrap">
                     {user.role === "CAMPUS_MANAGER"
                       ? "Campus Manager"
                       : user.role === "ORGANIZER"
@@ -120,7 +120,7 @@ export default function Navbar() {
                   </p>
                 </div>
 
-                <div className="w-10 h-10 rounded-full bg-black border-2 border-black flex items-center justify-center font-bold text-sm text-white overflow-hidden select-none shadow-[2px_2px_0px_0px_black]">
+                <div className="w-10 h-10 rounded-full bg-black border-2 border-black flex items-center justify-center font-bold text-sm text-white overflow-hidden select-none shadow-[2px_2px_0px_0px_black] shrink-0">
                   {user.avatar ? (
                     <img src={user.avatar} alt={user.name} className="w-full h-full object-cover" />
                   ) : (
@@ -130,7 +130,7 @@ export default function Navbar() {
 
                 <button
                   onClick={() => logout()}
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-black border-2 border-black hover:bg-[#E5391F] hover:text-white hover:border-[#E5391F] shadow-[4px_4px_0px_0px_black] transition-all duration-200"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-black border-2 border-black hover:bg-[#E5391F] hover:text-white hover:border-[#E5391F] shadow-[4px_4px_0px_0px_black] transition-all duration-200 shrink-0"
                   title="Sign out"
                 >
                   <LogOut className="w-4 h-4" />

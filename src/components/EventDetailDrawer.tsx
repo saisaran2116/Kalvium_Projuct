@@ -65,7 +65,7 @@ export default function EventDetailDrawer({
 
   const handleSaveClick = async () => {
     if (!user) {
-      alert("Please sign in or select a demo user in the top bar to save events.");
+      alert("Please sign in to save events.");
       return;
     }
 
