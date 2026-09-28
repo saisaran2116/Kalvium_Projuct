@@ -58,7 +58,7 @@ export default function EventCard({
     e.stopPropagation();
 
     if (!user) {
-      alert("Please sign in or select a demo role in the top bar to save events.");
+      alert("Please sign in to save events.");
       return;
     }
 
@@ -166,13 +166,13 @@ export default function EventCard({
                   onClick={() => onSelectEvent(event)}
                   className="text-left flex-1 focus:outline-none"
                 >
-                  <h3 className="font-display text-2xl font-black text-black leading-none uppercase tracking-tighter hover:text-[#E5391F] transition-colors">
+                  <h3 className="font-display text-2xl font-black text-black leading-tight uppercase tracking-tight hover:text-[#E5391F] transition-colors">
                     {event.title}
                   </h3>
                 </button>
               ) : (
                 <Link href={`/events/${event.id}`} className="flex-1">
-                  <h3 className="font-display text-2xl font-black text-black leading-none uppercase tracking-tighter hover:text-[#E5391F] transition-colors">
+                  <h3 className="font-display text-2xl font-black text-black leading-tight uppercase tracking-tight hover:text-[#E5391F] transition-colors">
                     {event.title}
                   </h3>
                 </Link>
@@ -182,8 +182,8 @@ export default function EventCard({
                 onClick={handleSaveClick}
                 disabled={saving}
                 className={`flex-shrink-0 p-2 border-2 border-black rounded-none transition-all active:translate-x-1 active:translate-y-1 ${isSaved
-                    ? "bg-[#E5391F] text-white shadow-[2px_2px_0px_0px_black]"
-                    : "bg-white text-black hover:bg-[#E5391F] hover:text-white shadow-[2px_2px_0px_0px_black]"
+                  ? "bg-[#E5391F] text-white shadow-[2px_2px_0px_0px_black]"
+                  : "bg-white text-black hover:bg-[#E5391F] hover:text-white shadow-[2px_2px_0px_0px_black]"
                   }`}
                 title={isSaved ? "Remove from Schedule" : "Save to Schedule"}
               >

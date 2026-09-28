@@ -241,7 +241,7 @@ export default function CampusManagerVerificationQueue() {
 
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div>
-            <h1 className="text-5xl sm:text-6xl font-display font-black text-black tracking-tighter uppercase mt-4 leading-none">
+            <h1 className="text-4xl sm:text-5xl font-display font-black text-black tracking-tight uppercase mt-4 leading-tight">
               Event Verification Center
             </h1>
             <p className="text-xs sm:text-sm text-black font-bold mt-4">
@@ -282,8 +282,8 @@ export default function CampusManagerVerificationQueue() {
         <button
           onClick={() => setActiveTab("PENDING")}
           className={`p-6 rounded-2xl border-4 border-black text-left transition-all shadow-[4px_4px_0px_0px_black] hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_black] ${activeTab === "PENDING"
-              ? "bg-white"
-              : "bg-gray-100 opacity-80"
+            ? "bg-white"
+            : "bg-gray-100 opacity-80"
             }`}
         >
           <div className="flex items-center justify-between">
@@ -292,7 +292,7 @@ export default function CampusManagerVerificationQueue() {
             </span>
             <span className="w-3 h-3 rounded-full bg-[#FFB300] border-2 border-black animate-pulse" />
           </div>
-          <p className="text-5xl sm:text-6xl font-display font-black text-black mt-4 leading-none">
+          <p className="text-4xl sm:text-5xl font-display font-black text-black mt-3 leading-tight">
             {stats.pending.toString().padStart(2, "0")}
           </p>
           <p className="text-[10px] font-black uppercase tracking-widest text-gray-500 mt-2">Pending verification queue</p>
@@ -304,8 +304,8 @@ export default function CampusManagerVerificationQueue() {
             fetchHistory();
           }}
           className={`p-6 rounded-2xl border-4 border-black text-left transition-all shadow-[4px_4px_0px_0px_black] hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_black] ${activeTab === "APPROVED"
-              ? "bg-[#E8F5E9]"
-              : "bg-gray-100 opacity-80"
+            ? "bg-[#E8F5E9]"
+            : "bg-gray-100 opacity-80"
             }`}
         >
           <div className="flex items-center justify-between">
@@ -314,7 +314,7 @@ export default function CampusManagerVerificationQueue() {
             </span>
             <CheckCircle2 className="w-5 h-5 text-black" strokeWidth={3} />
           </div>
-          <p className="text-5xl sm:text-6xl font-display font-black text-black mt-4 leading-none">
+          <p className="text-4xl sm:text-5xl font-display font-black text-black mt-3 leading-tight">
             {stats.approved.toString().padStart(2, "0")}
           </p>
           <p className="text-[10px] font-black uppercase tracking-widest text-gray-500 mt-2">Certified events audit</p>
@@ -326,8 +326,8 @@ export default function CampusManagerVerificationQueue() {
             fetchHistory();
           }}
           className={`p-6 rounded-2xl border-4 border-black text-left transition-all shadow-[4px_4px_0px_0px_black] hover:-translate-y-1 hover:shadow-[8px_8px_0px_0px_black] ${activeTab === "DECLINED"
-              ? "bg-[#FDEAE7]"
-              : "bg-gray-100 opacity-80"
+            ? "bg-[#FDEAE7]"
+            : "bg-gray-100 opacity-80"
             }`}
         >
           <div className="flex items-center justify-between">
@@ -336,7 +336,7 @@ export default function CampusManagerVerificationQueue() {
             </span>
             <XCircle className="w-5 h-5 text-[#E5391F]" strokeWidth={3} />
           </div>
-          <p className="text-5xl sm:text-6xl font-display font-black text-[#E5391F] mt-4 leading-none">
+          <p className="text-4xl sm:text-5xl font-display font-black text-[#E5391F] mt-3 leading-tight">
             {stats.declined.toString().padStart(2, "0")}
           </p>
           <p className="text-[10px] font-black uppercase tracking-widest text-gray-500 mt-2">Declined with feedback log</p>
@@ -384,8 +384,8 @@ export default function CampusManagerVerificationQueue() {
                       key={event.id}
                       onClick={() => selectEventForReview(event)}
                       className={`p-5 rounded-2xl border-4 border-black cursor-pointer transition-all duration-200 ease-out-expo animate-slide-up stagger-${(idx % 4) + 1} ${isSelected
-                          ? "bg-[#FDEAE7] scale-[1.01]"
-                          : "bg-white shadow-[2px_2px_0px_0px_black] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_black]"
+                        ? "bg-[#FDEAE7] scale-[1.01]"
+                        : "bg-white shadow-[2px_2px_0px_0px_black] hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_black]"
                         }`}
                     >
                       <div className="flex items-start gap-3">
@@ -437,8 +437,8 @@ export default function CampusManagerVerificationQueue() {
                       <button
                         onClick={() => setIsEditing(!isEditing)}
                         className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest flex items-center gap-1.5 transition border-2 border-black shadow-[2px_2px_0px_0px_black] ${isEditing
-                            ? "bg-black text-white shadow-none translate-y-0.5"
-                            : "bg-white border-2 border-black shadow-[2px_2px_0px_0px_black] text-kalvium-ink dark:text-kalvium-dark-ink hover:border-kalvium-coral"
+                          ? "bg-black text-white shadow-none translate-y-0.5"
+                          : "bg-white border-2 border-black shadow-[2px_2px_0px_0px_black] text-kalvium-ink dark:text-kalvium-dark-ink hover:border-kalvium-coral"
                           }`}
                       >
                         <Edit3 className="w-3.5 h-3.5" />
@@ -542,8 +542,8 @@ export default function CampusManagerVerificationQueue() {
                       {/* Field 3: Time (Often MEDIUM/LOW confidence -> visually highlighted) */}
                       <div
                         className={`p-2.5 rounded-xl border transition ${confidenceMap.startTime === "LOW" || confidenceMap.endTime === "LOW"
-                            ? "bg-kalvium-warning-tint/50 border-kalvium-warning/40"
-                            : "bg-kalvium-surface-alt dark:bg-kalvium-dark-surface-alt border-kalvium-border dark:border-kalvium-dark-border"
+                          ? "bg-kalvium-warning-tint/50 border-kalvium-warning/40"
+                          : "bg-kalvium-surface-alt dark:bg-kalvium-dark-surface-alt border-kalvium-border dark:border-kalvium-dark-border"
                           }`}
                       >
                         <div className="flex items-center justify-between text-xs mb-1">
@@ -613,8 +613,8 @@ export default function CampusManagerVerificationQueue() {
                       {/* Field 5: Organizer (Uncertain -> Low Confidence Warning) */}
                       <div
                         className={`p-2.5 rounded-xl border transition ${confidenceMap.organizerName === "LOW"
-                            ? "bg-kalvium-warning-tint/50 border-kalvium-warning/40"
-                            : "bg-kalvium-surface-alt dark:bg-kalvium-dark-surface-alt border-kalvium-border dark:border-kalvium-dark-border"
+                          ? "bg-kalvium-warning-tint/50 border-kalvium-warning/40"
+                          : "bg-kalvium-surface-alt dark:bg-kalvium-dark-surface-alt border-kalvium-border dark:border-kalvium-dark-border"
                           }`}
                       >
                         <div className="flex items-center justify-between text-xs mb-1">

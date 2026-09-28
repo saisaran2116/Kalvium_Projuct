@@ -66,7 +66,7 @@ export default function StudentDashboardPage() {
           </span>
           <CampusVerifiedBadge size="sm" />
         </div>
-        <h1 className="text-3xl sm:text-5xl font-display font-black tracking-tighter uppercase text-kalvium-text dark:text-kalvium-dark-text tracking-tight">
+        <h1 className="text-3xl sm:text-5xl font-display font-black tracking-tight uppercase text-kalvium-text dark:text-kalvium-dark-text leading-tight">
           Good morning, {user.name.split(" ")[0]} 👋
         </h1>
         <p className="text-base text-kalvium-muted dark:text-kalvium-dark-muted mt-2">
@@ -77,21 +77,21 @@ export default function StudentDashboardPage() {
       {/* Metrics Row */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-10">
         <div className="p-5 rounded-2xl bg-white dark:bg-kalvium-dark-surface border-4 border-[#111111] dark:border-[#444444] shadow-[6px_6px_0px_0px_#111111] dark:shadow-[6px_6px_0px_0px_#444444] transition-all duration-300 hover:-translate-y-0.5 animate-slide-up stagger-1">
-          <span className="text-[11px] font-sans text-kalvium-muted uppercase tracking-wider font-semibold block mb-1">
+          <span className="text-[11px] font-sans text-kalvium-muted uppercase tracking-wider font-bold block mb-1">
             SAVED EVENTS
           </span>
           <div className="flex items-baseline gap-2">
-            <span className="text-4xl font-display font-black tracking-tighter uppercase text-kalvium-text dark:text-kalvium-dark-text">{savedEvents.length}</span>
+            <span className="text-4xl font-display font-black tracking-tight uppercase text-kalvium-text dark:text-kalvium-dark-text leading-tight">{savedEvents.length}</span>
             <span className="text-xs text-kalvium-muted">on personal schedule</span>
           </div>
         </div>
 
         <div className="p-5 rounded-2xl bg-white dark:bg-kalvium-dark-surface border-4 border-[#111111] dark:border-[#444444] shadow-[6px_6px_0px_0px_#111111] dark:shadow-[6px_6px_0px_0px_#444444] transition-all duration-300 hover:-translate-y-0.5 animate-slide-up stagger-2">
-          <span className="text-[11px] font-sans text-kalvium-muted uppercase tracking-wider font-semibold block mb-1">
+          <span className="text-[11px] font-sans text-kalvium-muted uppercase tracking-wider font-bold block mb-1">
             STARTING SOON
           </span>
           <div className="flex items-baseline gap-2">
-            <span className="text-4xl font-display font-black tracking-tighter uppercase text-kalvium-coral">
+            <span className="text-4xl font-display font-black tracking-tight uppercase text-kalvium-coral leading-tight">
               {savedEvents.filter((e: any) => e.isStartingSoon).length}
             </span>
             <span className="text-xs text-kalvium-muted">within 24 hours</span>
@@ -100,15 +100,15 @@ export default function StudentDashboardPage() {
 
         <div
           className={`p-5 rounded-2xl border-2 border-black shadow-[4px_4px_0px_0px_black] transition-all duration-300 hover:-translate-y-0.5 animate-slide-up stagger-3 ${conflictsCount > 0
-              ? "bg-kalvium-warning-tint dark:bg-kalvium-dark-warning-tint border-kalvium-warning-border"
-              : "bg-white dark:bg-kalvium-dark-surface border border-kalvium-border dark:border-kalvium-dark-border"
+            ? "bg-kalvium-warning-tint dark:bg-kalvium-dark-warning-tint border-kalvium-warning-border"
+            : "bg-white dark:bg-kalvium-dark-surface border border-kalvium-border dark:border-kalvium-dark-border"
             }`}
         >
-          <span className="text-[11px] font-sans uppercase tracking-wider font-semibold block mb-1 text-kalvium-warning">
+          <span className="text-[11px] font-sans uppercase tracking-wider font-bold block mb-1 text-kalvium-warning">
             SCHEDULE CONFLICTS
           </span>
           <div className="flex items-baseline gap-2">
-            <span className="text-4xl font-display font-black tracking-tighter uppercase text-kalvium-warning">
+            <span className="text-4xl font-display font-black tracking-tight uppercase text-kalvium-warning leading-tight">
               {conflictsCount}
             </span>
             <span className="text-xs text-kalvium-text dark:text-kalvium-dark-text">
@@ -139,7 +139,7 @@ export default function StudentDashboardPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             <div className="lg:col-span-8 space-y-2">
-              <h2 className="text-2xl sm:text-3xl font-display font-black tracking-tighter uppercase text-kalvium-text dark:text-kalvium-dark-text tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-display font-black tracking-tight uppercase text-kalvium-text dark:text-kalvium-dark-text leading-tight">
                 {startingSoonEvent.title}
               </h2>
               <div className="flex items-center gap-4 text-xs text-kalvium-text dark:text-kalvium-dark-text font-medium flex-wrap">
@@ -172,7 +172,7 @@ export default function StudentDashboardPage() {
         {/* Left: Your Upcoming Events */}
         <div className="lg:col-span-8 space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-display font-black tracking-tighter uppercase uppercase tracking-wider text-kalvium-text dark:text-kalvium-dark-text">
+            <h2 className="text-lg font-display font-black tracking-wide uppercase text-kalvium-text dark:text-kalvium-dark-text">
               Your Upcoming Saved Events
             </h2>
             <Link
@@ -200,8 +200,8 @@ export default function StudentDashboardPage() {
                 <div
                   key={ev.id}
                   className={`group p-4 rounded-xl border flex items-center justify-between gap-4 transition-all duration-200 hover:-translate-y-0.5 shadow-kalvium-sm animate-slide-up stagger-${(idx % 5) + 1} ${ev.hasClash
-                      ? "bg-kalvium-warning-tint/20 border-kalvium-warning-border"
-                      : "bg-white dark:bg-kalvium-dark-surface border-kalvium-border dark:border-kalvium-dark-border hover:border-kalvium-coral/40"
+                    ? "bg-kalvium-warning-tint/20 border-kalvium-warning-border"
+                    : "bg-white dark:bg-kalvium-dark-surface border-kalvium-border dark:border-kalvium-dark-border hover:border-kalvium-coral/40"
                     }`}
                 >
                   <div className="min-w-0 flex-1">

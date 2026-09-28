@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { Search, SlidersHorizontal } from "lucide-react";
 import EventCard, { EventCardData } from "@/components/EventCard";
 import CampusVerifiedBadge from "@/components/CampusVerifiedBadge";
@@ -106,7 +107,7 @@ export default function EventsExplorePage() {
             </span>
             <CampusVerifiedBadge size="sm" animate />
           </div>
-          <h1 className="font-display text-4xl sm:text-6xl font-black text-black dark:text-white tracking-tighter uppercase leading-none">
+          <h1 className="font-display text-3xl sm:text-5xl font-black text-black dark:text-white tracking-tight uppercase leading-tight">
             Everything verified, this semester.
           </h1>
           <p className="text-base font-medium text-[#777777] mt-2 max-w-xl">
@@ -164,8 +165,8 @@ export default function EventsExplorePage() {
                 key={df.id}
                 onClick={() => setSelectedDateFilter(df.id)}
                 className={`relative px-4 py-1.5 rounded-full font-bold transition-all duration-200 active:scale-95 whitespace-nowrap border ${active
-                    ? "bg-[#E5391F] text-white border-black shadow-[4px_4px_0px_0px_black]"
-                    : "bg-white text-black border-black hover:shadow-[4px_4px_0px_0px_black]"
+                  ? "bg-[#E5391F] text-white border-black shadow-[4px_4px_0px_0px_black]"
+                  : "bg-white text-black border-black hover:shadow-[4px_4px_0px_0px_black]"
                   }`}
               >
                 {df.label}
@@ -186,8 +187,8 @@ export default function EventsExplorePage() {
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 className={`relative px-4 py-1.5 rounded-full font-bold transition-all duration-200 active:scale-95 whitespace-nowrap border ${active
-                    ? "bg-black text-white border-black shadow-[4px_4px_0px_0px_black]"
-                    : "bg-white text-black border-black hover:shadow-[4px_4px_0px_0px_black]"
+                  ? "bg-black text-white border-black shadow-[4px_4px_0px_0px_black]"
+                  : "bg-white text-black border-black hover:shadow-[4px_4px_0px_0px_black]"
                   }`}
               >
                 {cat === "ALL" ? "All Categories" : cat}
@@ -220,21 +221,36 @@ export default function EventsExplorePage() {
           ))}
         </div>
       ) : events.length === 0 ? (
-        <div className="bg-white dark:bg-[#111111] py-16 text-center rounded-2xl p-8 max-w-xl mx-auto border-4 border-black shadow-[6px_6px_0px_0px_black]">
-          <p className="font-display text-2xl font-black text-[#111111] dark:text-white mb-2">No verified events found</p>
-          <p className="text-sm text-[#777777] font-medium mb-6">
-            Try adjusting your search query, timeline filters, or category.
+        <div className="bg-white dark:bg-[#111111] py-16 text-center rounded-3xl p-8 max-w-xl mx-auto border-4 border-black shadow-[8px_8px_0px_0px_black]">
+          <p className="font-display text-3xl font-black text-[#111111] dark:text-white uppercase tracking-tight mb-3">
+            {searchQuery || selectedCategory !== "ALL" || selectedDateFilter !== "ALL"
+              ? "No matching events found"
+              : "No campus events yet"}
           </p>
-          <button
-            onClick={() => {
-              setSearchQuery("");
-              setSelectedCategory("ALL");
-              setSelectedDateFilter("ALL");
-            }}
-            className="btn-kalvium-primary"
-          >
-            Clear all filters
-          </button>
+          <p className="text-xs font-bold uppercase tracking-widest text-[#777777] mb-8">
+            {searchQuery || selectedCategory !== "ALL" || selectedDateFilter !== "ALL"
+              ? "Try adjusting your search query, timeline filters, or category."
+              : "Be the first club or organizer to post an upcoming campus event."}
+          </p>
+          {searchQuery || selectedCategory !== "ALL" || selectedDateFilter !== "ALL" ? (
+            <button
+              onClick={() => {
+                setSearchQuery("");
+                setSelectedCategory("ALL");
+                setSelectedDateFilter("ALL");
+              }}
+              className="px-8 py-3.5 bg-black hover:bg-[#E5391F] text-white font-black text-xs uppercase tracking-widest rounded-full border-2 border-black shadow-[4px_4px_0px_0px_black] hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_black] transition-all"
+            >
+              Clear all filters
+            </button>
+          ) : (
+            <Link
+              href="/events/create"
+              className="inline-flex items-center gap-2 px-8 py-3.5 bg-[#E5391F] hover:bg-black text-white font-black text-xs uppercase tracking-widest rounded-full border-2 border-black shadow-[4px_4px_0px_0px_black] hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_black] transition-all"
+            >
+              Post an Event →
+            </Link>
+          )}
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

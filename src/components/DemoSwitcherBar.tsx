@@ -34,12 +34,12 @@ export default function DemoSwitcherBar() {
             <button
               onClick={() => demoLogin("STUDENT")}
               disabled={loading}
-              className={`flex items-center gap-2 px-4 py-2 border-2 border-black text-[10px] font-black uppercase tracking-widest transition-all duration-200 select-none ${user?.role === "STUDENT"
-                  ? "bg-white text-black shadow-none translate-y-[4px] translate-x-[4px]"
-                  : "bg-black text-white shadow-[4px_4px_0px_0px_black] hover:shadow-[2px_2px_0px_0px_black] hover:translate-y-[2px] hover:translate-x-[2px]"
+              className={`inline-flex items-center justify-center gap-2 px-4 py-2 border-2 border-black text-[10px] font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 select-none ${user?.role === "STUDENT"
+                ? "bg-white text-black shadow-none translate-y-[4px] translate-x-[4px]"
+                : "bg-black text-white shadow-[4px_4px_0px_0px_black] hover:shadow-[2px_2px_0px_0px_black] hover:translate-y-[2px] hover:translate-x-[2px]"
                 }`}
             >
-              <GraduationCap className="w-4 h-4" />
+              <GraduationCap className="w-4 h-4 shrink-0" />
               <span>Student</span>
             </button>
 
@@ -47,12 +47,12 @@ export default function DemoSwitcherBar() {
             <button
               onClick={() => demoLogin("ORGANIZER")}
               disabled={loading}
-              className={`flex items-center gap-2 px-4 py-2 border-2 border-black text-[10px] font-black uppercase tracking-widest transition-all duration-200 select-none ${user?.role === "ORGANIZER"
-                  ? "bg-white text-black shadow-none translate-y-[4px] translate-x-[4px]"
-                  : "bg-black text-white shadow-[4px_4px_0px_0px_black] hover:shadow-[2px_2px_0px_0px_black] hover:translate-y-[2px] hover:translate-x-[2px]"
+              className={`inline-flex items-center justify-center gap-2 px-4 py-2 border-2 border-black text-[10px] font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 select-none ${user?.role === "ORGANIZER"
+                ? "bg-white text-black shadow-none translate-y-[4px] translate-x-[4px]"
+                : "bg-black text-white shadow-[4px_4px_0px_0px_black] hover:shadow-[2px_2px_0px_0px_black] hover:translate-y-[2px] hover:translate-x-[2px]"
                 }`}
             >
-              <User className="w-4 h-4" />
+              <User className="w-4 h-4 shrink-0" />
               <span>Organizer</span>
             </button>
 
@@ -60,12 +60,12 @@ export default function DemoSwitcherBar() {
             <button
               onClick={() => demoLogin("CAMPUS_MANAGER")}
               disabled={loading}
-              className={`flex items-center gap-2 px-4 py-2 border-2 border-black text-[10px] font-black uppercase tracking-widest transition-all duration-200 select-none ${user?.role === "CAMPUS_MANAGER"
-                  ? "bg-white text-black shadow-none translate-y-[4px] translate-x-[4px]"
-                  : "bg-black text-white shadow-[4px_4px_0px_0px_black] hover:shadow-[2px_2px_0px_0px_black] hover:translate-y-[2px] hover:translate-x-[2px]"
+              className={`inline-flex items-center justify-center gap-2 px-4 py-2 border-2 border-black text-[10px] font-bold uppercase tracking-wider whitespace-nowrap transition-all duration-200 select-none ${user?.role === "CAMPUS_MANAGER"
+                ? "bg-white text-black shadow-none translate-y-[4px] translate-x-[4px]"
+                : "bg-black text-white shadow-[4px_4px_0px_0px_black] hover:shadow-[2px_2px_0px_0px_black] hover:translate-y-[2px] hover:translate-x-[2px]"
                 }`}
             >
-              <Shield className="w-4 h-4" />
+              <Shield className="w-4 h-4 shrink-0" />
               <span>Manager</span>
             </button>
 
